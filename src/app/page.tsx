@@ -9,6 +9,7 @@ import { Separator } from "@/components/ui/separator"
 import { ChatMessage } from "@/components/chat/chat-message"
 import { ChatInput } from "@/components/chat/chat-input"
 import { StatusBadge } from "@/components/ui/status-badge"
+import { ThemeSwitcher } from "@/components/ui/theme-switcher"
 import { MessageSquare, Shield, Users, Star } from "lucide-react"
 
 export default function Home() {
@@ -74,7 +75,10 @@ export default function Home() {
               <h1 className="text-3xl font-bold text-foreground">Hotel Agent</h1>
               <p className="text-muted-foreground">Luxury Customer Support & Admin Panel</p>
             </div>
-            <Badge className="bg-accent text-accent-foreground">Demo</Badge>
+            <div className="flex items-center gap-3">
+              <ThemeSwitcher />
+              <Badge className="bg-accent text-accent-foreground">Demo</Badge>
+            </div>
           </div>
         </div>
       </header>
@@ -206,6 +210,24 @@ export default function Home() {
                 </div>
                 <Separator />
                 <Input placeholder="Luxury input field..." />
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Theme Switcher</CardTitle>
+                <CardDescription>
+                  Toggle between luxury light and dark themes
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium">Current Theme</p>
+                  <p className="text-xs text-muted-foreground">
+                    Switch between light and dark modes
+                  </p>
+                </div>
+                <ThemeSwitcher />
               </CardContent>
             </Card>
           </div>
