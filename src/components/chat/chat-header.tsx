@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ThemeSwitcher } from "@/components/ui/theme-switcher"
@@ -15,10 +16,10 @@ export default function ChatHeader({ agent }: ChatHeaderProps) {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Button variant="outline" asChild>
-              <a href="/">
+              <Link href="/">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Back to Home
-              </a>
+              </Link>
             </Button>
             
             <div className="flex items-center gap-3">

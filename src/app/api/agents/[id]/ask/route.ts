@@ -4,7 +4,7 @@ import { askAgent } from '@/services/agents'
 // POST /api/agents/[id]/ask - Ask question to agent
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const { id } = await params
@@ -35,7 +35,7 @@ export async function POST(
         { status: 500 }
       )
     }
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Failed to ask agent' }, 
       { status: 500 }

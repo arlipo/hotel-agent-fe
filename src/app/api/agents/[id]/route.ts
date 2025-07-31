@@ -4,7 +4,7 @@ import { getAgentById } from '@/services/agents'
 // GET /api/agents/[id] - Get agent by ID
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const { id } = await params
@@ -26,7 +26,7 @@ export async function GET(
         { status: 500 }
       )
     }
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Failed to fetch agent' }, 
       { status: 500 }

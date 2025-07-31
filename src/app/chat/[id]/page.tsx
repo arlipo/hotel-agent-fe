@@ -21,9 +21,9 @@ async function getAgentData(id: string): Promise<Agent | null> {
 }
 
 interface ChatPageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
 export default async function ChatPage({ params }: ChatPageProps) {

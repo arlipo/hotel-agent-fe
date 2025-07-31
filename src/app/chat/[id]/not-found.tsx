@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { MessageSquareX, ArrowLeft } from "lucide-react"
@@ -14,15 +15,15 @@ export default function NotFound() {
         </CardHeader>
         <CardContent className="text-center space-y-4">
           <p className="text-muted-foreground">
-            The agent you're looking for doesn't exist or is not available.
+            The agent you&apos;re looking for doesn&apos;t exist or is not available.
           </p>
           
           <div className="flex flex-col gap-2">
             <Button asChild>
-              <a href="/">
+              <Link href="/">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Back to Home
-              </a>
+              </Link>
             </Button>
             
             <Button variant="outline" asChild>
